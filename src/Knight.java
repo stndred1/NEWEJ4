@@ -15,14 +15,19 @@ public class Knight extends Enemy {
     @Override
     //Override del ataque del mago
     public int attack(){
-        return 30 + Player.HP/5;
+        return 30 + Mage.HP/5;
+    }
+    //El ataque para el Brawler
+    public int attackB(){
+        return 30 + Player.HP/4;
     }
     //Override para la habilidad del Knight
     @Override
     public void ability(){
         this.ability = 2;
         if(this.ability > 0){
-           Player.HP = Player.HP -20;
+            Mage.HP = Mage.HP - 20;
+            Brawler.HP = Brawler.HP - 20;
             System.out.println("Has disparado una flecha a tu oponente!\n Has hecho 20 en dano\n");
             this.ability = this.ability --;
         }

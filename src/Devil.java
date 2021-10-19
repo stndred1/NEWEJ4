@@ -3,7 +3,7 @@
  * section 40
  * @Version Tears of the Damned Project
  */
-public class Devil extends Enemy{
+public class Devil extends Demon{
     //Constructor de diablo
     static int XP, HP;
     public Devil(String name, int HP, int MAXHP, int XP){
@@ -14,14 +14,19 @@ public class Devil extends Enemy{
     //El override del ataque para el mago
     @Override
         public int attack(){
-            return 150 + Player.HP/5;
+            return 150 + Mage.HP/5;
+        }
+        //Ataque para el Brawler
+        public int attackB(){
+            return 150 + Brawler.HP/4;
         }
         //Override para la habilidad del Diablo
         @Override
         public void ability(){
             this.ability = 2;
             if(this.ability > 0){
-                Player.XP = Player.XP - 75;
+                Mage.XP = Mage.XP - 75;
+                Brawler.XP = Brawler.XP - 75;
                 System.out.println("Has debilitado al heroe!\n");
                 this.ability = this.ability - 1;
             }

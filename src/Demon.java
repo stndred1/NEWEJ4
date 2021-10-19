@@ -15,15 +15,19 @@ public class Demon extends Enemy{
         @Override
         //Override el ataque del mago
         public int attack(){
-            return 75 + Player.HP/5;
+            return 75 + Mage.HP/5;
         }
-
+        //Ataque para el Brawler
+        public int attackB(){
+            return 75 + Brawler.HP/4;
+        }
         //Override para la habilidad del demonio
         @Override
         public void ability(){
             this.ability = 2;
             if(this.ability > 0){
-                Player.XP = Player.XP -50;
+                Mage.XP = Mage.XP - 50;
+                Brawler.XP = Brawler.XP - 50;
                 System.out.println("Has debilitado al heroe\n");
                 this.ability = this.ability --;
             }

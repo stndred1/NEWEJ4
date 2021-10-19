@@ -5,7 +5,6 @@
  */
 public class Mage extends Player {
     //Constructor del Mago
-    int n;
     String name;
     static int HP, XP, ability;
     public Mage(String name, int HP, int MAXHP, int XP){
