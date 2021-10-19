@@ -1,4 +1,9 @@
-public class Attacker {
+/**
+ * @author Edgar Mendez 211133
+ * section 40
+ * @Version Tears of the Damned Project
+ */
+public abstract class Attacker {
     static String name;
     int HP;
     static int MAXHP;
@@ -6,18 +11,10 @@ public class Attacker {
     int ability;
 
     public Attacker(String name, int HP, int MAXHP, int XP) {
-
-        if (HP <= 0){
-            HP = 0;
-        }
-
+        //Constructor para la clase abstracta
     }
-
-    public int attack(){
-        return 0; 
-    }
-
-    public void ability(){
-
-    }
+    //metodo abstracto para atacar
+    public abstract int attack();
+    //metodo abstracto para la habilidad
+    public abstract void ability();
 }
